@@ -18,7 +18,7 @@ PYTHONPATH = sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = 'AquaFi Protocol'
-copyright = '2021, XIO'
+copyright = '2021, Blockzero Labs, @DevSalim'
 author = 'Umar Salim'
 
 # The full version, including alpha/beta/rc tags
