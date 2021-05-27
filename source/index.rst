@@ -1,4 +1,4 @@
-Flash Protocol
+AquaFi Protocol
 ==============
 .. image:: logo.png
     :width: 120px
