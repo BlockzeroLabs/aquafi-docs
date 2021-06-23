@@ -6,6 +6,8 @@ Here at Blockzero Labs we have learnt a significant amount from the development 
 
 These modules can be upgraded/modified after the initial launch to extend or change the functionality. This is possible via governance and will require the Blockzero multi-sig wallet and a time delay to approve such a change - more information can be found on the governance section of this documentation.
 
+**[architecture diagram for better illustration here]**
+
 The AquaFi protocol can be broken down into the following discrete pieces:
 
 - Aqua Primary Contract: This module is responsible for bringing together the other modules of AquaFi. This contract specifies what handlers are allowed to interact with the Aqua Primary as well as additional functionality such as ......
