@@ -1,4 +1,4 @@
-.. image:: ../logo.png
+.. image:: ../../logo.png
     :width: 120px
     :alt: Aqua Logo
     :align: center
