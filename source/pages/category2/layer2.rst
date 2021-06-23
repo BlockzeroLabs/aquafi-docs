@@ -24,4 +24,3 @@ Finalised Approach
 The solution we eventually decided on was to add support to the Aqua token which would allow the Blockzero council to update the minter addresses. This will allow us to have the flexibility of creating a token bridge and whitelisting the token bridge address on the Aqua token for a true 1 to 1 Aqua exchange between layer 1 and layer 2.
 
 This was proposed to the community and approved by nearly 90% of all XIO holders agreeing with the solution, additional information about this can be `found here <https://vote.blockzerolabs.io/#/blockzerolabs.eth/proposal/QmZGddNkbmfymwTfuqdWmHpd3Zed8UEVoMTijwCEfiTf9A>`_
-.
