@@ -39,3 +39,9 @@ Options Deadlines
 The initial distribution will be valid for upto three months after they are initially uploaded into Dropzero (available for claiming). This means the original recipients will have three months to claim their Aqua KPI Option tokens from Dropzero before they are returned to the Vortex.
 
 These KPI Option tokens will be redeemable until the end of the ethereum blockchain. However, if the total fees captured does not hit $1,000,000 USD by **XXXXXXXXX** date then the value of the options at this date will be the permanent value. This means if the total fees generated is $900,000 by the aforementioned date, then regardless of the KPI increasing (total fees generated), these option tokens will still be exchangeable for 0.9 Aqua tokens. **Please note, this is subject to how the KPI Option token from UMA works and is therefore subject to the same limitations.**
+
+
+Governance Votes
+----------------
+- `Original Vote for token allocation: here <https://vote.blockzerolabs.io/#/blockzerolabs.eth/proposal/QmX6JcmDkHtLNmYYYRkWPxFh4F7UpH3M3ariVNFcEMffgF>`_
+- `Latest Vote for token allocation: here <https://vote.blockzerolabs.io/#/blockzerolabs.eth/proposal/QmZZ7rB1fxd2ydQm3f8rdLFhGXqx3Ux2K5WYQaxmC6Ah9g>`_

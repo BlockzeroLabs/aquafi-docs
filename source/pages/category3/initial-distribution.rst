@@ -9,9 +9,20 @@ The AquaFi protocol and the corresponding Aqua token was developed by Blockzero 
 
 It was stated in December of 2020 that all XIO holders would recieve free Aqua tokens upon launch. Since this date, XIO holders have been earning the rights to Aqua tokens on a daily basis as per the image circulated below:
 
-[insert image of four tokens per month]
+.. image:: dist.png
+    :width: 550px
+    :alt: Aqua Logo
+    :align: center
 
 XIO holders were eligible to Aqua tokens so long as they held XIO tokens from December 2020 to December 2021.
+
+This has since changed as per `this governance vote <https://vote.blockzerolabs.io/#/blockzerolabs.eth/proposal/QmXJpiB9bx8G7TzhEgCd6EqnA694gBbSppHVvRGjAPJxM4>`_ due to complications introduced during development which you can find out about `here <https://vote.blockzerolabs.io/#/blockzerolabs.eth/proposal/QmXJpiB9bx8G7TzhEgCd6EqnA694gBbSppHVvRGjAPJxM4>`_
+.
+
+**The eligibility of Aqua tokens will run up until the launch of AquaFi. Once the protocol launches, XIO holders will no longer be earning Aqua tokens over time (as per the model illustrated above)**
+
+As mentioned in the governance vote, we will determine a rough estimate of Aqua based on current projections (if eligility continued until December). These tokens will be minted and placed into the Vortex where citizens will be able to earn them by staking XIO. This effectively stopped all future eligibility and allows earning of Aqua based on staked XIO in the Vortex.
+
 
 Allocation
 ----------
