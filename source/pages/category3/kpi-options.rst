@@ -28,9 +28,13 @@ The estimated number of Aqua tokens allocated to KPI Options is 150 million.
 
 Options Distribution
 --------------------
+
 We will initially distribute 50% of all KPI Options upon launch (or shortly after) of AquaFi. The Blockzero council will retain control of the remaining 50% and release these as new DEX's and/or projects are added to AquaFi. These remaining 50% of KPI option tokens will be kept in the Vortex until they are voted on to be used to help incenticise additional DEXs.
 
 Example: If AquaFi supports Curve Finance LP tokens in the coming months after the initial deployment then these reserved KPI Option tokens could be used to help incentivise Curve LPs to add their Curve LP tokens into AquaFi.
+
+Options Deadlines
+-----------------
 
 The initial distribution will be valid for upto three months after they are initially uploaded into Dropzero (available for claiming). This means the original recipients will have three months to claim their Aqua KPI Option tokens from Dropzero before they are returned to the Vortex.
 
