@@ -5,7 +5,9 @@ AquaFi Protocol
     :alt: Aqua Logo
     :align: center
 
-Welcome! The purpose of the following pages are to provide a compresensive document specifiying all the different aspects of the AquaFi protocol and the Aqua token. If you are new to AquaFi you may want to check out the :doc:`./pages/getting-started/overview.rst` or the :doc:`./pages/getting-started/faq.rst`
+Welcome! The purpose of the following pages are to provide a compresensive document specifiying all the different aspects of the AquaFi protocol and the Aqua token. If you are new to AquaFi you may want to check out the :doc:`./pages/category1/overview` or the :doc:`./pages/category1/faq`
+
+**This documentation is aimed at those who want to learn the basics of AquaFi to those who want to learn the more in-depth technical aspects of the protocol too**
 
 Getting Started
 ---------------
