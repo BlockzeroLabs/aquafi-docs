@@ -39,13 +39,19 @@ Description: This function is responsible for unstaking the lp tokens. It iterat
 **Oracle Contract**
 ---------------------
 
-This contract is responsible for fetching the price of a provided token address with respect to aqua token.
+This contract is responsible for fetching the price of a provided token address with respect to aqua token. It only works for pair who has pair with WETH.
 
 **Fetch**
 ---------------------
-Parameters: (address token)
+Parameters: (address token, bytes32 data)
 
 Description: This function is responsible for fetching the amount of aqua per token provided.
+
+**FetchAquaPrice**
+---------------------
+Prameters: (no params)
+
+Description: This funciton retireves aqua price in terms of eth i.e one eth is equal to x aqua.
 
 ---------------------
 
@@ -74,7 +80,7 @@ Description: It stores the rootk (K = root(token0 * token1)) against the lpToken
 
 Parameters: (bytes32 id, uint256 tokenIdOrAmount, address contractAddress)
 
-Description: Calculates the rootK difference to see if any fees has been accumulated. If so, it calculates the fees & pay aqua token aganist that fee with premium added. It is only callable by the primary contract, it returns tokenAddress, premium, tokenDifference and ecoded data of premium, tokenAddress and tokenFess acumulated.Once it is done then it deletes the stake entry from the storage.
+Description: Calculates the rootK difference to see if any fees has been accumulated. If so, it only pays the lp amount back to the user and returns fees in token0 & token1 back to aqua primaty contract from where aqua gets paid out. Index fund reieves lp token. It is only callable by the primary contract, it returns tokenAddress, premium, tokenDifference and ecoded data of premium, tokenAddress and tokenFess acumulated.Once it is done then it deletes the stake entry from the storage.
 
 **V3 Handler Functions**
 ---------------------
@@ -93,7 +99,7 @@ Description: It checks the fees against the nft, if the fees exists then it upda
 
 Parameters: (bytes32 id, uint256 tokenIdOrAmount, address staker, address contractAddress)
 
-Description: This function withdraws the lp tokens and returns the tokenDifference (change in accumulated fees) along with tokenAddress and encoded data of the pool. It does so by calculating the fees difference between the past and the present state of the pool after the swaps.
+Description: This function sends the lp tokens back to the staker and sends the fees in token0 and token1 accumulated to index fund. It returns fees in token0 & token1 bacck to aqua primaty contract from where aqua gets paid out. 
 
 
 
