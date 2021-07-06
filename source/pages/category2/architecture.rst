@@ -84,7 +84,18 @@ The major v3 handler functions are as follows.
 **Update**
 ---------------------
 
-Parameters:
+Parameters: (bytes32 id, uint256 tokenValue, address contractAddress, bytes32 data)
+
+Description: It checks the fees against the nft, if the fees exists then it updates the fees in the user stakes record. It does so by first decoding the pool address from the encoded data recieved from the params. It checks if the pool is whitelisted if yes then it updates the token0AtDeposit and token1AtDeposit by fetching it from nftPositionManager positions on the basis of tokenValue recieved in the params. This function is only callable from Aqua Primary Contract.
+
+**Withdraw**
+---------------------
+
+Parameters: (bytes32 id, uint256 tokenIdOrAmount, address staker, address contractAddress)
+
+Description: This function withdraws the lp tokens and returns the tokenDifference (change in accumulated fees) along with tokenAddress and encoded data of the pool. It does so by calculating the fees difference between the past and the present state of the pool after the swaps.
+
+
 
 
 
