@@ -13,11 +13,12 @@ This token has been deployed on both test-net and the Ethereum main-net.
 
 Contract Functionality
 ----------------------
-The Aqua token conforms to the **XXXXXXXX** standard which means the following functionality is supported:
+The Aqua token conforms to the ERC20 token standard which means the following functionality is supported:
 
 - Mint
 - Burn
 - Transfer
+- TransferFrom
 - BurnFrom
 
 Aqua Token Privileges
