@@ -99,7 +99,7 @@ Description: It checks the fees against the nft, if the fees exists then it upda
 
 Parameters: (bytes32 id, uint256 tokenIdOrAmount, address staker, address contractAddress)
 
-Description: This function sends the lp tokens back to the staker and sends the fees in token0 and token1 accumulated to index fund. It returns fees in token0 & token1 bacck to aqua primaty contract from where aqua gets paid out. 
+Description: This function sends the lp tokens back to the staker and sends the fees in token0 and token1 accumulated to index fund. It returns fees in token0 & token1 back to aqua primaty contract from where aqua gets paid out. 
 
 
 
