@@ -1,5 +1,5 @@
 AquaFi Protocol
-==============
+===============
 .. image:: logo.png
     :width: 120px
     :alt: Aqua Logo
@@ -18,7 +18,7 @@ aspects of the protocol.
 Developer links
 ---------------
 
-The AquaFi codebase is comprised of an ecosystem of open source components. AquaFi follows a highly modular design which allows functionality to be swapped out without a token migration - you can read more about this on the :doc:`./pages/architecture`
+The AquaFi codebase is comprised of an ecosystem of open source components. AquaFi follows a highly modular design which allows functionality to be swapped out without a token migration - you can read more about this on the :doc:`./pages/category2/architecture`
 
 - `Link 1 <https://github.com/BlockzeroLabs/1>`_
 - `Link 2 <https://github.com/Blockzerolabs/2>`_
@@ -59,7 +59,7 @@ Contents
 
 .. toctree::
    :maxdepth: 3
-   :caption: Launch
+   :caption: Protocol Launch
 
    ./pages/category3/initial-distribution.rst
    ./pages/category3/kpi-options.rst
