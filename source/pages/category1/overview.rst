@@ -16,9 +16,12 @@ How does it work?
 
 AquaFi (in short) captures fees generated from staked liquidity and pays an additional premium upon unstaking. This additional premium and the returned liquidity fees will be paid in Aqua tokens.
 
-The steps below show what this looks like from a users perspective:
+.. image:: ../../images/overview-how-does-it-work.png
+    :width: 750px
+    :alt: Overview, how does it work
+    :align: center
 
-**[consider changing this to a nice image - maybe Anthony can help]**
+The steps below show what this looks like from a users perspective:
 
 - User stakes their decentralised exchange (DEX) liquidity tokens into AquaFi
 - User allows some time to pass, during this time, the staked liquidity tokens are earning fees on their associated DEX
