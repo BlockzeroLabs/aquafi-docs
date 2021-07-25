@@ -79,7 +79,7 @@ Parameters: (bytes32 id, uint256 tokenIdOrAmount, address contractAddress)
 Description: Calculates the rootK difference to see if any fees has been accumulated. If so, it only pays the lp amount back to the user and returns fees in token0 & token1 back to aqua primaty contract from where aqua gets paid out. Index fund reieves lp token. It is only callable by the primary contract, it returns tokenAddress, premium, tokenDifference and ecoded data of premium, tokenAddress and tokenFess acumulated.Once it is done then it deletes the stake entry from the storage.
 
 **V3 Handler Functions**
-------------------------
+========================
 
 The major v3 handler functions are as follows.
 
@@ -95,11 +95,42 @@ Description: It checks the fees against the nft, if the fees exists then it upda
 
 Parameters: (bytes32 id, uint256 tokenIdOrAmount, address staker, address contractAddress)
 
-Description: This function sends the lp tokens back to the staker and sends the fees in token0 and token1 accumulated to index fund. It returns fees in token0 & token1 back to aqua primaty contract from where aqua gets paid out. 
+Description: This function sends the lp tokens back to the staker and sends the fees in token0 and token1 accumulated to index fund. It returns fees in token0 & token1 back to aqua primaty contract from where aqua gets paid out.
 
+**Controller Functions**
+===================================
 
+**AddPools**
+------------
 
+Parameters: (address[] calldata tokenA, address[] calldata tokenB, uint256[] calldata aquaPremium, uint24[] calldata fee)
 
+Description: This is an owner modified funcition (only callable by owner). It expects the lists of token addresseses, list premium of the pairs and their corresponding fee values. It's purpose is to whitelist the pools in the handlers.
 
+**UpdateIndexFundAddress**
+--------------------------
 
+Parameters: (address newAddr)
 
+Description: This is a owner modified function (only callable by owner). It expects the new index fund address. It is used to update/change the index fund contract address to be used in the handler.
+
+**UpdatePremiumOfpool**
+-----------------------
+
+Parameters: (address pool, uint256 newAquaPremium)
+
+Description: This is a owner modified function (only callable by owner). It expects the pool address and its corresponding new aqua premium value. It is used to update the aqua premium value of the whitelisted pools in the handler.
+
+**UpdatePrimary**
+-----------------
+
+Parameters: (address newAddress)
+
+Description: This is a owner modified function (only callable by owner). It expects the new address of the primary contract. It simply updates the aquaPrimary contract address in the handler.
+
+**UpdatePoolStatus**
+--------------------
+
+Parameters: (address pool)
+
+Description: This is a owner modified function (only callable by owner). It expects the address of a pool for which the status in the pool whitelist has to be changed.
