@@ -17,7 +17,7 @@ How does it work?
 AquaFi (in short) captures fees generated from staked liquidity and pays an additional premium upon unstaking. This additional premium and the returned liquidity fees will be paid in Aqua tokens.
 
 .. image:: ../../images/overview-how-does-it-work.png
-    :width: 750px
+    :width: 100%
     :alt: Overview, how does it work
     :align: center
 
