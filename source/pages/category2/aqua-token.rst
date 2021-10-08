@@ -7,8 +7,8 @@ Contract Addresses
 ------------------
 This token has been deployed on both test-net and the Ethereum main-net.
 
-- [Network] 0x0
-- [Mainnet] 0x1
+- [Mainnet] 0xd34a24006b862f4e9936c506691539d6433ad297
+- [Rinkeby] 0xB2dc7059D7c9c2b93E924dc7C938FcbF986aC5C2
 
 
 Contract Functionality
@@ -25,7 +25,7 @@ Aqua Token Privileges
 ----------------------
 The Aqua token will allow users to:
 
-- have governance rights over almost all AquaFi related proposals and almost all AquaFi related decisions - e.g. change pool premiums - the exhaustive list is as follows:
+- Have governance rights over almost all AquaFi related proposals and almost all AquaFi related decisions - e.g. change pool premiums - the exhaustive list is as follows:
 
   - Governance will be executed through timelock contract.
   
@@ -34,6 +34,5 @@ The Aqua token will allow users to:
   - Updating oracle address, hander addresses, locking and unlocking of handler contracts.
   
   - Grant/Revoke Minting roles to addresses.
-
-- exchange the token for the fees captured in the protocol proportionally - i.e. if you burn 5% of all the Aqua tokens in existence, you can withdraw 5% of all the fees captures by the protocol (**the structure for this redemption is not finalized and will be approved by Aqua token holders after launch**)
-- exchange the token for the trapped liquidity in the protocol proportionally - i.e. if you burn 10% of all the Aqua tokens in existence, you can withdraw 10% of all the trapped liquidity from the protocol. (**the structure for this redemption is not finalized and will be approved by Aqua token holders after launch**)
+  
+  - Allows users to burn aqua tokens to redeem fees from indexfund contract. Eg, If users burns 10% of the aqua tokens then users can withdraw 10% off underlying assests in the indexfund.
