@@ -14,11 +14,11 @@ These modules can be upgraded/modified after the initial launch to extend or cha
 The AquaFi protocol can be broken down into the following discrete pieces:
 
 - Aqua Primary Contract: This module is responsible for bringing together the other modules of AquaFi. This contract specifies what handlers are allowed to interact with the Aqua Primary as well as additional functionality such as Stake, Unstake and Unstake all.
-- Oracle Contract: This module is responsible for obtaining the price of the Aqua token in a decentralised manner. We currently have two separate implementations of this, one which uses the time-weighed-average-price (TWAP) oracle from Uniswap Version 2 and one which uses the same oracle but with Uniswap Version 3.
-- Handler Contracts: These "handler" contracts are responsible for supporting a specific decentralised exchange such as Uniswap V2. The purpose of this feature is to integrate the exchanges with aqua protocol Upon launch, we intend to launch with the following handler contracts: Uniswap V2, Uniswap V3, Flashstake and Sushiswap.
+- Oracle Contract: This module is responsible for obtaining the price of the Aqua token in a decentralised manner. We currently have an implementation of this using time-weighed-average-price (TWAP) oracle from Uniswap Version 2. All pairs must have their pairs created with WETH in order for oracle to work.
+- Handler Contracts: These "handler" contracts are responsible for supporting a specific decentralised exchange such as Uniswap V2. The purpose of this feature is to integrate the exchanges with aqua protocol upon launch, we intend to launch with the following handler contracts: Uniswap V2, Uniswap V3, Flashstake and Sushiswap.
 - Index Fund Contract: This module is responsible for dispatching the tokens requested by the users against the aqua token they hold. It calculates the equivalent amount of tokens to be dispatched on the basis of the aqua token percentage they provide. After transferring the tokens, this contract burns the aqua token of that user thus decreasing the aqua total supply and increasing the value of the token. The contract acquires 2% of the tokens in every unstake.
 - Timelock Contract: The sole purpose of this contract is to provide time-lock functionality on selected functions. This is the contract which "owns" or can execute the "admin" functionality. The Blockzero council multi-sig will be the proposer and executor
-- Controller Contract: The purpose of this contract .... TODO: To update.
+- Premium Contract: This contract is responsible for calutating the premium on fees earned by the user while unstaking. All of the logic for calculating premium resides in this contract.
 
 **Aqua Primary Contract**
 =========================
@@ -29,7 +29,7 @@ The primary contract consists of some generalized components that ensures the in
 
 Parameters: (uint256 tokenIdOrAmount, address handlerAddress, address contractAddress, bytes data)
 
-Description: This function is responsible for staking the users lp token and transfer it to handler contract. It updates the stakes record and invokes the handlers update function where the rootK value of the lp token is calculated and saved in the stakes record. 
+Description: This function is responsible for staking the users lp token and transfer it to handler contract. It updates the stakes record and invokes the handlers update function where it checks for validation checks & stores the lp token data. 
 
 
 **Unstake**
@@ -37,7 +37,7 @@ Description: This function is responsible for staking the users lp token and tra
 
 Parameters: (bytes32[] calldata id, uint256[] calldata tokenValue)
 
-Description: This function is responsible for unstaking the lp tokens. It iterates through the list of lp tokens and calculates the cumulative fees in aqua token from all the lp tokens. This function fetches the fees by calling the internal function _unstake in which which expects single id and tokenValue and returns the aqua amount in terms of fees accumulated for that token. Inside the function it fetches the token difference, aqua premium and token address by calling the withdraw function of the selected handler. Then on the basis of aqua price fetched from the oracle, it calculates the aqua amount which is then added to the fees calculated on the basis of aqua premium.
+Description: This function is responsible for unstaking the lp tokens. It iterates through the list of lp tokens and calculates the cumulative fees in aqua token from all the lp tokens. This function fetches the fees by calling the internal function _unstake in which which expects single id and tokenValue and returns the aqua amount in terms of fees accumulated for that token. Inside the function it fetches the token difference, aqua premium and token address by calling the withdraw function of the selected handler. Then on the basis of aqua price fetched from the oracle, it calculates the aqua amount which is then added to the fees calculated on the basis of aqua premium. It also mints addtitional 20% of Aqua tokens and sends it to the indexfund contract.
 
 **Oracle Contract**
 ===================
@@ -54,7 +54,7 @@ Description: This function is responsible for fetching the amount of aqua per to
 ------------------
 Prameters: (no params)
 
-Description: This function retrieves aqua price in terms of eth i.e one eth is equal to x aqua.
+Description: This function retrieves aqua price in terms of eth i.e one Eth is equal to X Aqua.
 
 **Handler Contract**
 ====================
@@ -81,7 +81,7 @@ Description: It stores the rootk (K = root(token0 * token1)) against the lpToken
 
 Parameters: (bytes32 id, uint256 tokenIdOrAmount, address contractAddress)
 
-Description: Calculates the rootK difference to see if any fees has been accumulated. If so, it only pays the lp amount back to the user and returns fees in token0 & token1 back to aqua primary contract from where aqua gets paid out. Index fund receives lp token. It is only callable by the primary contract, it returns tokenAddress, premium, tokenDifference and encoded data of premium, tokenAddress and tokenFess accumulated. Once it is done then it deletes the stake entry from the storage.
+Description: Calculates the rootK difference to see if any fees has been accumulated. If so, it only pays the lp amount back to the user and returns fees in token0 & token1 back to aqua primary contract from where aqua gets paid out. Indexfund receives lp token. It is only callable by the primary contract, it returns tokenAddress, premium, tokenDifference and encoded data of premium, tokenAddress and tokenFess accumulated. Once it is done then it deletes the stake entry from the storage.
 
 **V3 Handler Functions**
 ========================
@@ -100,16 +100,14 @@ Description: It checks the fees against the nft, if the fees exists then it upda
 
 Parameters: (bytes32 id, uint256 tokenIdOrAmount, address staker, address contractAddress)
 
-Description: This function sends the lp tokens back to the staker and sends the fees in token0 and token1 accumulated to index fund. It returns fees in token0 & token1 back to aqua primaty contract from where aqua gets paid out.
+Description: This function performs validation checks & then sends the lp tokens back to the staker. It also tarnsafers the fees accumulated in token0 and token1  to indexfund. It returns the amount of fees in token0 & token1 back to aqua primaty contract from where aqua token gets paid out with premium.
 
 **Admin Functions**
 ===================
 
-The functions specified below are only callable by the owner address. The owner address for these functions is a timelock contract controlled by the Blockzero council.
+The functions specified below are only callable by the owner address. The owner address for these functions is a timelock contract controlled by the Blockzero council. These functions are available in all of the handler contracts.
 
 The timelock contract enforces a waiting period after a proposed change has been suggested.
-
-TODO: Add information to the documentation with the timelock contract
 
 **AddPools**
 ------------
